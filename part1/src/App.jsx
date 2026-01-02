@@ -1,34 +1,25 @@
-const Hello = (props) => {
-  console.log(props)
-  return(
+const Hello = ({name, age}) =>{
+  // const {name, age} = props
+  const bornYear = () => new Date().getFullYear() - age
+  return (
     <div>
-      <p> Hi {props.name}, you are {props.age} years old</p>
+      <p>
+        Hello {name}, you are {age} year old
+      </p>
+      <p> So you were probably born in {bornYear()}</p>
     </div>
   )
 }
 
-
 const App = () => {
-  // console.log("Hello from component")
-  // const now = new Date()
-  // const a = 10
-  // const b = 20
-  // console.log(now, a+b)
+  const name = 'Jordan'
+  const age = 28
 
-  // const name = 'Nunes'
-  // const age = 22
-
-  const friends = [
-    {name: 'Hayan', age: 18},
-    {name: 'Noelle', age: 25}
-  ]
-  return (
+  return(
     <div>
-      {/* <h1>Greetings</h1>
-      <Hello name='Lucas' age={26 +11}/>
-      <Hello name={name} age={age}/> */}
-      <p>{friends[0].name} {friends[0].age}</p>
-      <p>{friends[1].name} {friends[1].age}</p>
+      <h1> Greetings</h1>
+      <Hello name='Mei' age={12 +10}/>
+      <Hello name={name} age={age}/>
     </div>
   )
 }

@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 const Hello = ({name, age}) =>{
   // const {name, age} = props
   const bornYear = () => new Date().getFullYear() - age
@@ -12,14 +14,24 @@ const Hello = ({name, age}) =>{
 }
 
 const App = () => {
-  const name = 'Jordan'
-  const age = 28
+  const [counter, setCounter] = useState(0)
+
+// contador
+    // setTimeout(
+    //   () => setCounter(counter + 1),
+    //   1000
+    // )
+
+    const increaseByOne = () => setCounter(counter + 1)
+    const setTozero = () => setCounter(0)
 
   return(
     <div>
-      <h1> Greetings</h1>
-      <Hello name='Mei' age={12 +10}/>
-      <Hello name={name} age={age}/>
+      {counter}
+
+      <button onClick={increaseByOne}> plus</button>
+
+      <button onClick={setTozero}> zero </button> 
     </div>
   )
 }
